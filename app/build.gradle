@@ -30,6 +30,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    // Android Studio 4.0
+
+        buildFeatures {
+            viewBinding = true
+        }
 }
 
 dependencies {
