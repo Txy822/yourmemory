@@ -17,5 +17,10 @@ val DEFAULT_ICONS = listOf(
     R.drawable.ic_work,
     R.drawable.ic_person,
     R.drawable.ic_notification,
-    R.drawable.ic_car
-)
+    R.drawable.ic_car,
+    R.drawable.ic_lock,
+    R.drawable.ic_laptop,
+    R.drawable.ic_eye,
+    R.drawable.ic_like,
+    R.drawable.ic_hand,
+    )

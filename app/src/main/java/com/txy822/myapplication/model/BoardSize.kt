@@ -3,8 +3,8 @@ package com.txy822.myapplication.model
 enum class BoardSize(val numCards: Int) {
     EASY(8),
     MEDIUM(18),
-    HARD(24),
-    TOUGH(30);
+    HARD(28),
+    TOUGH(40);
 
 
     companion object {

@@ -63,12 +63,12 @@ class MainActivity : AppCompatActivity() {
             }
             BoardSize.HARD -> {
 
-                tvNumMoves.text = "HARD: 6 x 4"
-                tvNumPairs.text = "Pairs: 0 / 12"
+                tvNumMoves.text = "HARD: 7 x 4"
+                tvNumPairs.text = "Pairs: 0 / 14"
             }
             BoardSize.TOUGH -> {
-                tvNumMoves.text = "TOUGH: 6 x 5"
-                tvNumPairs.text = "Pairs: 0 / 15"
+                tvNumMoves.text = "TOUGH: 8 x 5"
+                tvNumPairs.text = "Pairs: 0 / 20"
             }
         }
         tvNumPairs.setTextColor(ContextCompat.getColor(this, R.color.color_progress_none))
