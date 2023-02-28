@@ -37,7 +37,7 @@ class MemoryBoardAdapter(
         val view = LayoutInflater.from(context).inflate(R.layout.memory_card, parent, false)
         val layoutParams =
             view.findViewById<CardView>(R.id.cardView).layoutParams as ViewGroup.MarginLayoutParams
-        layoutParams.height = cardSizeLength
+        layoutParams.width = cardSizeLength
         layoutParams.height = cardSizeLength
         layoutParams.setMargins(MARGIN_SIZE, MARGIN_SIZE, MARGIN_SIZE, MARGIN_SIZE)
         return ViewHolder(view)
@@ -68,11 +68,4 @@ class MemoryBoardAdapter(
             }
         }
     }
-//    private fun RecyclerView.ViewHolder.bind(position: Int) {
-//        val imageButton =itemView.findViewById<ImageButton>(R.id.imageButton)
-//        imageButton.setOnClickListener {
-//            Log.i(TAG, "Clicked on position $position")
-//        }
-//
-//    }
 }

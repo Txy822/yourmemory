@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener
 import com.google.android.material.snackbar.Snackbar
-import com.txy822.myapplication.databinding.ActivityMainBinding
+//import com.txy822.myapplication.databinding.ActivityMainBinding
 import com.txy822.myapplication.model.BoardSize
 import com.txy822.myapplication.model.MemoryCard
 import com.txy822.myapplication.model.MemoryGame
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val binding = ActivityMainBinding.inflate(layoutInflater)
+       // val binding = ActivityMainBinding.inflate(layoutInflater)
         // setContentView(binding.root)
         rvBoard = findViewById(R.id.rvBoard)
         tvNumMoves = findViewById(R.id.tvNumMoves)
@@ -63,8 +63,12 @@ class MainActivity : AppCompatActivity() {
             }
             BoardSize.HARD -> {
 
-                tvNumMoves.text = "HARD: 4 x 6"
+                tvNumMoves.text = "HARD: 6 x 4"
                 tvNumPairs.text = "Pairs: 0 / 12"
+            }
+            BoardSize.TOUGH -> {
+                tvNumMoves.text = "TOUGH: 6 x 5"
+                tvNumPairs.text = "Pairs: 0 / 15"
             }
         }
         tvNumPairs.setTextColor(ContextCompat.getColor(this, R.color.color_progress_none))
@@ -124,12 +128,15 @@ class MainActivity : AppCompatActivity() {
            BoardSize.EASY -> radioGroupSize.check(R.id.rbEasy)
            BoardSize.MEDIUM -> radioGroupSize.check(R.id.rbMedium)
            BoardSize.HARD -> radioGroupSize.check(R.id.rbHard)
+           BoardSize.TOUGH-> radioGroupSize.check(R.id.rbTough)
+
        }
         showAlertDialog("Choose new size", boardSizeView, View.OnClickListener {
             boardSize = when(radioGroupSize.checkedRadioButtonId){
                 R.id.rbEasy   -> BoardSize.EASY
                 R.id.rbMedium -> BoardSize.MEDIUM
                 R.id.rbHard   -> BoardSize.HARD
+                R.id.rbTough -> BoardSize.TOUGH
                 else -> BoardSize.HARD
             }
             setupBoard()
