@@ -40,6 +40,7 @@
         android:id="@+id/rvImagePicker"
         android:layout_width="409dp"
         android:layout_height="0dp"
+        android:overScrollMode="never"
         app:layout_constraintBottom_toTopOf="@+id/etGameName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

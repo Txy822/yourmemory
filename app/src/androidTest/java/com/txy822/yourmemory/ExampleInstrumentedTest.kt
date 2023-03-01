@@ -1,4 +1,4 @@
-package com.txy822.myapplication
+package com.txy822.yourmemory
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

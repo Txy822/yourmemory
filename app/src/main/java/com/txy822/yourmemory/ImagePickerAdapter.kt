@@ -1,4 +1,4 @@
-package com.txy822.myapplication
+package com.txy822.yourmemory
 
 import android.content.Context
 import android.net.Uri
@@ -7,16 +7,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.txy822.myapplication.model.BoardSize
+import com.txy822.yourmemory.model.BoardSize
 import kotlin.math.min
 
 
 class ImagePickerAdapter(
     private val context: Context,
     private val imageUris: List<Uri>,
-    private val boardSize: BoardSize
+    private val boardSize: BoardSize,
+    private val imageClickListener: ImageClickListener
 ) : RecyclerView.Adapter<ImagePickerAdapter.ViewHolder>() {
 
+
+    interface ImageClickListener {
+        fun onPlaceholderClicker()
+    }
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val ivCustomImage = itemView.findViewById<ImageView>(R.id.ivCustomImage)
         fun bind(uri: Uri) {
@@ -25,7 +30,8 @@ class ImagePickerAdapter(
         }
         fun bind() {
             ivCustomImage.setOnClickListener{
-                //To-Do
+
+                imageClickListener.onPlaceholderClicker()
             }
         }
     }

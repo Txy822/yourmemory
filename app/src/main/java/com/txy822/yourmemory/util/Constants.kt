@@ -1,6 +1,6 @@
-package com.txy822.myapplication.util
+package com.txy822.yourmemory.util
 
-import com.txy822.myapplication.R
+import com.txy822.yourmemory.R
 
 const val  EXTRA_BOARD_SIZE ="EXTRA_BOARD_SIZE"
 val DEFAULT_ICONS = listOf(

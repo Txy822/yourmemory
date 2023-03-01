@@ -1,4 +1,4 @@
-package com.txy822.myapplication
+package com.txy822.yourmemory
 
 import android.animation.ArgbEvaluator
 import android.content.Intent
@@ -16,20 +16,17 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener
 import com.google.android.material.snackbar.Snackbar
 //import com.txy822.myapplication.databinding.ActivityMainBinding
-import com.txy822.myapplication.model.BoardSize
-import com.txy822.myapplication.model.MemoryCard
-import com.txy822.myapplication.model.MemoryGame
-import com.txy822.myapplication.util.DEFAULT_ICONS
-import com.txy822.myapplication.util.EXTRA_BOARD_SIZE
+import com.txy822.yourmemory.model.BoardSize
+import com.txy822.yourmemory.model.MemoryGame
+import com.txy822.yourmemory.util.EXTRA_BOARD_SIZE
 
 class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val TAG = "MainActivity"
-        private  const val CREATE_REQUEST_CODE = 248
+        private const val CREATE_REQUEST_CODE = 248
     }
 
     private lateinit var adapter: MemoryBoardAdapter
@@ -45,17 +42,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-       // val binding = ActivityMainBinding.inflate(layoutInflater)
+        // val binding = ActivityMainBinding.inflate(layoutInflater)
         // setContentView(binding.root)
         rvBoard = findViewById(R.id.rvBoard)
         tvNumMoves = findViewById(R.id.tvNumMoves)
         tvNumPairs = findViewById(R.id.tvNumPairs)
         clRoot = findViewById(R.id.clRoot)
+
+        val intent = Intent(this, CreateActivity::class.java)
+        intent.putExtra(EXTRA_BOARD_SIZE, BoardSize.MEDIUM)
+       startActivity(intent)
         setupBoard()
     }
 
     private fun setupBoard() {
-        when(boardSize){
+        when (boardSize) {
             BoardSize.EASY -> {
                 tvNumMoves.text = "Easy: 4 x 2"
                 tvNumPairs.text = "Pairs: 0 / 4"
@@ -97,12 +98,16 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    private fun showAlertDialog(title: String, view: View?, positiveButtonClickListener: View.OnClickListener) {
+    private fun showAlertDialog(
+        title: String,
+        view: View?,
+        positiveButtonClickListener: View.OnClickListener
+    ) {
         AlertDialog.Builder(this)
             .setTitle(title).setView(view)
             .setNegativeButton("CANCEL", null)
-            .setPositiveButton("OK") {_,_ ->
-            positiveButtonClickListener.onClick(null)
+            .setPositiveButton("OK") { _, _ ->
+                positiveButtonClickListener.onClick(null)
             }.show()
     }
 
@@ -110,9 +115,11 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.mi_refresh -> {
                 if (memoryGame.getNumMoves() > 0 && !memoryGame.haveWonGame()) {
-                    showAlertDialog("Quit your current game?", null, View.OnClickListener { setupBoard() })
-                }
-                else {
+                    showAlertDialog(
+                        "Quit your current game?",
+                        null,
+                        View.OnClickListener { setupBoard() })
+                } else {
                     setupBoard()
                 }
             }
@@ -122,7 +129,7 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.mi_custom -> {
                 showCreationDialog()
-                return  true
+                return true
             }
         }
         return super.onOptionsItemSelected(item)
@@ -133,10 +140,10 @@ class MainActivity : AppCompatActivity() {
         val radioGroupSize = boardSizeView.findViewById<RadioGroup>(R.id.radioGroup)
 
         showAlertDialog("Create your own memory board", boardSizeView, View.OnClickListener {
-           val desiredBoardSize = when(radioGroupSize.checkedRadioButtonId){
-                R.id.rbEasy   -> BoardSize.EASY
+            val desiredBoardSize = when (radioGroupSize.checkedRadioButtonId) {
+                R.id.rbEasy -> BoardSize.EASY
                 R.id.rbMedium -> BoardSize.MEDIUM
-                R.id.rbHard   -> BoardSize.HARD
+                R.id.rbHard -> BoardSize.HARD
                 R.id.rbTough -> BoardSize.TOUGH
                 else -> BoardSize.HARD
             }
@@ -147,20 +154,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showSizeDialog() {
-         val boardSizeView = LayoutInflater.from(this).inflate(R.layout.dialog_board_size, null)
+        val boardSizeView = LayoutInflater.from(this).inflate(R.layout.dialog_board_size, null)
         val radioGroupSize = boardSizeView.findViewById<RadioGroup>(R.id.radioGroup)
-       when(boardSize){
-           BoardSize.EASY -> radioGroupSize.check(R.id.rbEasy)
-           BoardSize.MEDIUM -> radioGroupSize.check(R.id.rbMedium)
-           BoardSize.HARD -> radioGroupSize.check(R.id.rbHard)
-           BoardSize.TOUGH-> radioGroupSize.check(R.id.rbTough)
+        when (boardSize) {
+            BoardSize.EASY -> radioGroupSize.check(R.id.rbEasy)
+            BoardSize.MEDIUM -> radioGroupSize.check(R.id.rbMedium)
+            BoardSize.HARD -> radioGroupSize.check(R.id.rbHard)
+            BoardSize.TOUGH -> radioGroupSize.check(R.id.rbTough)
 
-       }
+        }
         showAlertDialog("Choose new size", boardSizeView, View.OnClickListener {
-            boardSize = when(radioGroupSize.checkedRadioButtonId){
-                R.id.rbEasy   -> BoardSize.EASY
+            boardSize = when (radioGroupSize.checkedRadioButtonId) {
+                R.id.rbEasy -> BoardSize.EASY
                 R.id.rbMedium -> BoardSize.MEDIUM
-                R.id.rbHard   -> BoardSize.HARD
+                R.id.rbHard -> BoardSize.HARD
                 R.id.rbTough -> BoardSize.TOUGH
                 else -> BoardSize.HARD
             }

@@ -1,4 +1,4 @@
-package com.txy822.myapplication.model
+package com.txy822.yourmemory.model
 
 data class MemoryCard(
     val identifier: Int,

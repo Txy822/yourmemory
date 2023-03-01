@@ -1,6 +1,6 @@
-package com.txy822.myapplication.model
+package com.txy822.yourmemory.model
 
-import com.txy822.myapplication.util.DEFAULT_ICONS
+import com.txy822.yourmemory.util.DEFAULT_ICONS
 
 class MemoryGame(private val boardSize: BoardSize) {
 

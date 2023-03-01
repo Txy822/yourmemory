@@ -1,4 +1,4 @@
-package com.txy822.myapplication
+package com.txy822.yourmemory
 
 import android.content.Context
 import android.util.Log
@@ -10,8 +10,8 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.txy822.myapplication.model.BoardSize
-import com.txy822.myapplication.model.MemoryCard
+import com.txy822.yourmemory.model.BoardSize
+import com.txy822.yourmemory.model.MemoryCard
 import kotlin.math.min
 
 class MemoryBoardAdapter(
