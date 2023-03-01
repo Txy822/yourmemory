@@ -1,4 +1,4 @@
-package com.txy822.yourmemory
+package com.txy822.memorygame
 
 import android.animation.ArgbEvaluator
 import android.content.Intent
@@ -17,10 +17,10 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
-//import com.txy822.myapplication.databinding.ActivityMainBinding
-import com.txy822.yourmemory.model.BoardSize
-import com.txy822.yourmemory.model.MemoryGame
-import com.txy822.yourmemory.util.EXTRA_BOARD_SIZE
+//import com.txy822.memorygame.databinding.ActivityMainBinding
+import com.txy822.memorygame.model.BoardSize
+import com.txy822.memorygame.model.MemoryGame
+import com.txy822.memorygame.util.EXTRA_BOARD_SIZE
 
 class MainActivity : AppCompatActivity() {
 

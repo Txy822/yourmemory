@@ -1,4 +1,4 @@
-package com.txy822.yourmemory
+package com.txy822.memorygame
 
 import android.app.Activity
 import android.content.Intent
@@ -21,12 +21,13 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.txy822.myapplication.R
-import com.txy822.yourmemory.model.BoardSize
-import com.txy822.yourmemory.util.BitmapScaler
-import com.txy822.yourmemory.util.EXTRA_BOARD_SIZE
-import com.txy822.yourmemory.util.isPermissionGranted
-import com.txy822.yourmemory.util.requestPermission
+import com.txy822.memorygame.model.BoardSize
+import com.txy822.memorygame.util.BitmapScaler
+import com.txy822.memorygame.util.EXTRA_BOARD_SIZE
+import com.txy822.memorygame.util.isPermissionGranted
+import com.txy822.memorygame.util.requestPermission
+import com.txy822.memorygame.R
+
 import java.io.ByteArrayOutputStream
 
 class CreateActivity : AppCompatActivity() {

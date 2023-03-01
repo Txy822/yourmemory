@@ -1,4 +1,4 @@
-package com.txy822.yourmemory
+package com.txy822.memorygame
 
 import org.junit.Test
 

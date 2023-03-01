@@ -1,4 +1,4 @@
-package com.txy822.yourmemory.util
+package com.txy822.memorygame.util
 
 import android.app.Activity
 import android.content.Context

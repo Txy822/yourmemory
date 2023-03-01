@@ -1,4 +1,4 @@
-package com.txy822.yourmemory.util
+package com.txy822.memorygame.util
 
 import android.graphics.Bitmap
 

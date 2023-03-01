@@ -1,4 +1,4 @@
-package com.txy822.yourmemory.model
+package com.txy822.memorygame.model
 
 enum class BoardSize(val numCards: Int) {
     EASY(8),
