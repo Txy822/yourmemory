@@ -2,6 +2,7 @@ package com.txy822.myapplication.util
 
 import com.txy822.myapplication.R
 
+const val  EXTRA_BOARD_SIZE ="EXTRA_BOARD_SIZE"
 val DEFAULT_ICONS = listOf(
     R.drawable.ic_face,
     R.drawable.ic_flower,

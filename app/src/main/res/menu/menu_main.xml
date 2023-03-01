@@ -3,6 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/mi_custom"
+        android:title="Create custom game" />
+    <item
         android:id="@+id/mi_new_size"
         android:title="Choose new size"
         app:showAsAction="never" />
