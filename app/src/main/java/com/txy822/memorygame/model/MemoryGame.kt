@@ -2,19 +2,23 @@ package com.txy822.memorygame.model
 
 import com.txy822.memorygame.util.DEFAULT_ICONS
 
-class MemoryGame(private val boardSize: BoardSize) {
+class MemoryGame(private val boardSize: BoardSize, private val customImages: List<String>?) {
 
     val cards: List<MemoryCard>
     var numPairsFound = 0
-    private var numCardFlips =0
+    private var numCardFlips = 0
     private var indexOfSingleSelectedCard: Int? = null
 
 
     init {
-        val chosenImages = DEFAULT_ICONS.shuffled().take(boardSize.getNumPairs())
-        val randomisedImages = (chosenImages + chosenImages).shuffled()
-        cards = randomisedImages.map { MemoryCard(it, false, false) }
-
+        if(customImages == null){
+            val chosenImages = DEFAULT_ICONS.shuffled().take(boardSize.getNumPairs())
+            val randomisedImages = (chosenImages + chosenImages).shuffled()
+            cards = randomisedImages.map { MemoryCard(it) }
+        } else {
+            val randomisedImages = (customImages + customImages).shuffled()
+            cards = randomisedImages.map { MemoryCard(it.hashCode(),it) }
+        }
     }
 
     fun flipCard(position: Int): Boolean {
@@ -61,7 +65,7 @@ class MemoryGame(private val boardSize: BoardSize) {
     }
 
     fun getNumMoves(): Int {
-        return  numCardFlips/2
+        return numCardFlips / 2
     }
 
 }

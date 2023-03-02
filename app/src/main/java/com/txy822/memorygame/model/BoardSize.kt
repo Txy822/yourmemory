@@ -6,7 +6,6 @@ enum class BoardSize(val numCards: Int) {
     HARD(28),
     TOUGH(40);
 
-
     companion object {
         fun getByValue(value: Int) = values().first { it.numCards == value }
     }
