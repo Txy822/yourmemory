@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupBoard() {
-        supportActionBar?.title =gameName ?: getString(R.string.app_name)
+        supportActionBar?.title = gameName ?: getString(R.string.app_name)
         when (boardSize) {
             BoardSize.EASY -> {
                 tvNumMoves.text = "Easy: 4 x 2"
@@ -153,11 +153,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showDownloadDialog() {
-        val boardDownloadView = LayoutInflater.from(this).inflate(R.layout.dialog_download_board, null)
+        val boardDownloadView =
+            LayoutInflater.from(this).inflate(R.layout.dialog_download_board, null)
         showAlertDialog("Fetch memory game", boardDownloadView, View.OnClickListener {
             val etDownloadGame = boardDownloadView.findViewById<EditText>(R.id.etDownloadGame)
             val gameToDownload = etDownloadGame.text.toString().trim()
-            downloadGame(gameToDownload)
+            if(gameToDownload.isBlank()){
+                Snackbar.make(
+                    clRoot,
+                    "Game name is empty!",
+                    Snackbar.LENGTH_LONG
+                ).show()
+            }
+            else {
+                downloadGame(gameToDownload)
+            }
         })
     }
 
@@ -211,7 +221,8 @@ class MainActivity : AppCompatActivity() {
             for (imageUrl in userImageList.images) {
                 Picasso.get().load(imageUrl).fetch()
             }
-            Snackbar.make(clRoot, "You're now playing '$customGameName'!", Snackbar.LENGTH_LONG).show()
+            Snackbar.make(clRoot, "You're now playing '$customGameName'!", Snackbar.LENGTH_LONG)
+                .show()
             setupBoard()
         }.addOnFailureListener { exception ->
             Log.e(TAG, "Exception when retrieving game", exception)
@@ -262,11 +273,181 @@ class MainActivity : AppCompatActivity() {
             tvNumPairs.setTextColor(color)
             tvNumPairs.text = "Pairs: ${memoryGame.numPairsFound} / ${boardSize.getNumPairs()}"
             if (memoryGame.haveWonGame()) {
-                Snackbar.make(clRoot, " You have won! Congratulations.", Snackbar.LENGTH_LONG).show()
-                CommonConfetti.rainingConfetti(clRoot, intArrayOf(Color.YELLOW, Color.RED, Color.MAGENTA, Color.GREEN, Color.BLACK, Color.BLUE, Color.GRAY, Color.CYAN)).oneShot()
+                Snackbar.make(clRoot, " You have won! Congratulations.", Snackbar.LENGTH_LONG)
+                    .show()
+                confettiAnimation()
             }
         }
         tvNumMoves.text = "Moves: ${memoryGame.getNumMoves()}"
         adapter.notifyDataSetChanged()
     }
+
+    private fun confettiAnimation() {
+        CommonConfetti.explosion(clRoot, 500,900,   intArrayOf(
+            Color.YELLOW,
+            Color.RED,
+            Color.MAGENTA,
+            Color.GREEN,
+            Color.BLACK,
+            Color.BLUE,
+            Color.GRAY,
+            Color.CYAN,
+            Color.LTGRAY,
+            Color.DKGRAY,
+            Color.TRANSPARENT,
+            Color.YELLOW,
+            Color.BLUE,
+            Color.BLUE,
+            Color.BLUE,
+            Color.GREEN,
+            Color.YELLOW,
+            Color.RED,
+            Color.MAGENTA,
+            Color.GREEN,
+            Color.BLACK,
+            Color.BLUE,
+            Color.GRAY,
+            Color.CYAN,
+            Color.LTGRAY,
+            Color.DKGRAY,
+            Color.TRANSPARENT,
+            Color.YELLOW,
+            Color.BLUE,
+            Color.BLUE,
+            Color.BLUE,
+            Color.GREEN,
+            Color.YELLOW,
+            Color.RED,
+            Color.MAGENTA,
+            Color.GREEN,
+            Color.BLACK,
+            Color.BLUE,
+            Color.GRAY,
+            Color.CYAN,
+            Color.LTGRAY,
+            Color.DKGRAY,
+            Color.TRANSPARENT,
+            Color.YELLOW,
+            Color.BLUE,
+            Color.BLUE,
+            Color.BLUE,
+            Color.GREEN,
+            Color.YELLOW,
+            Color.RED,
+            Color.MAGENTA,
+            Color.GREEN,
+            Color.BLACK,
+            Color.BLUE,
+            Color.GRAY,
+            Color.CYAN,
+            Color.LTGRAY,
+            Color.DKGRAY,
+            Color.TRANSPARENT,
+            Color.YELLOW,
+            Color.BLUE,
+            Color.BLUE,
+            Color.BLUE,
+            Color.GREEN,
+            Color.BLUE,
+            Color.BLUE,
+            Color.BLUE,
+            Color.BLUE,
+            Color.BLUE,
+            Color.BLUE,
+            Color.BLUE,
+            Color.BLUE,
+            Color.BLUE,
+            Color.BLUE,
+            Color.BLUE,
+            Color.BLUE,
+            Color.GREEN,
+            Color.GREEN,
+            Color.GREEN,
+            Color.GREEN,
+        )).oneShot().animate()
+        CommonConfetti.rainingConfetti(
+            clRoot,
+            intArrayOf(
+                Color.YELLOW,
+                Color.RED,
+                Color.MAGENTA,
+                Color.GREEN,
+                Color.BLACK,
+                Color.BLUE,
+                Color.GRAY,
+                Color.CYAN,
+                Color.LTGRAY,
+                Color.DKGRAY,
+                Color.TRANSPARENT,
+                Color.YELLOW,
+                Color.BLUE,
+                Color.BLUE,
+                Color.BLUE,
+                Color.GREEN,
+                Color.YELLOW,
+                Color.RED,
+                Color.MAGENTA,
+                Color.GREEN,
+                Color.BLACK,
+                Color.BLUE,
+                Color.GRAY,
+                Color.CYAN,
+                Color.LTGRAY,
+                Color.DKGRAY,
+                Color.TRANSPARENT,
+                Color.YELLOW,
+                Color.BLUE,
+                Color.BLUE,
+                Color.BLUE,
+                Color.GREEN,
+                Color.YELLOW,
+                Color.RED,
+                Color.MAGENTA,
+                Color.GREEN,
+                Color.BLACK,
+                Color.BLUE,
+                Color.GRAY,
+                Color.CYAN,
+                Color.LTGRAY,
+                Color.DKGRAY,
+                Color.TRANSPARENT,
+                Color.YELLOW,
+                Color.BLUE,
+                Color.BLUE,
+                Color.BLUE,
+                Color.GREEN,
+                Color.YELLOW,
+                Color.RED,
+                Color.MAGENTA,
+                Color.GREEN,
+                Color.BLACK,
+                Color.BLUE,
+                Color.GRAY,
+                Color.CYAN,
+                Color.LTGRAY,
+                Color.DKGRAY,
+                Color.TRANSPARENT,
+                Color.YELLOW,
+                Color.BLUE,
+                Color.BLUE,
+                Color.BLUE,
+                Color.GREEN,
+                Color.BLUE,
+                Color.BLUE,
+                Color.BLUE,
+                Color.BLUE,
+                Color.BLUE,
+                Color.BLUE,
+                Color.BLUE,
+                Color.BLUE,
+                Color.BLUE,
+                Color.BLUE,
+                Color.BLUE,
+                Color.BLUE,
+                Color.GREEN,
+                Color.GREEN,
+                Color.GREEN,
+                Color.GREEN,
+            )
+        ).oneShot().animate()   }
 }
