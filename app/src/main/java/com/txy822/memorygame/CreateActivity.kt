@@ -20,6 +20,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.ktx.firestore
@@ -108,8 +109,29 @@ class CreateActivity : AppCompatActivity() {
     }
 
     private fun saveDataToFirebase() {
+
         val customGameName = etGameName.text.toString()
         Log.i(TAG, " savedDataToFirebase")
+        btnSave.isEnabled =false
+        db.collection("games").document(customGameName).get().addOnSuccessListener { document ->
+            if (document != null && document.data != null) {
+                AlertDialog.Builder(this)
+                    .setTitle("Name Taken")
+                    .setMessage("A game already exists with the name ${customGameName}. Please choose other")
+                    .setPositiveButton("OK", null)
+                    .show()
+                btnSave.isEnabled =true
+            } else {
+                handleImageUploading(customGameName)
+            }
+        }.addOnFailureListener { exception ->
+            Log.e(TAG, "Encountered error while saving memory game", exception)
+            Toast.makeText(this, "Encountered error while saving memory game", Toast.LENGTH_SHORT).show()
+            btnSave.isEnabled =true
+        }
+    }
+
+    private fun handleImageUploading(customGameName: String) {
         var didEncounterError = false
         val uploadedImageUrls = mutableListOf<String>()
         for ((index, photoUri) in chosenImageUris.withIndex()) {
@@ -145,16 +167,16 @@ class CreateActivity : AppCompatActivity() {
     ) {
         db.collection("games").document(gameName)
             .set(mapOf("images" to imageUrls))
-            .addOnCompleteListener {gameCreationTask ->
-            if(!gameCreationTask.isSuccessful){
-                Log.e(TAG, "Exception with game creation", gameCreationTask.exception)
-                Toast.makeText(this, "Failed game creation", Toast.LENGTH_SHORT).show()
-                return@addOnCompleteListener
-            }
+            .addOnCompleteListener { gameCreationTask ->
+                if (!gameCreationTask.isSuccessful) {
+                    Log.e(TAG, "Exception with game creation", gameCreationTask.exception)
+                    Toast.makeText(this, "Failed game creation", Toast.LENGTH_SHORT).show()
+                    return@addOnCompleteListener
+                }
                 Log.i(TAG, "Successfully created game $gameName")
-                AlertDialog.Builder(this, )
+                AlertDialog.Builder(this)
                     .setTitle("Upload complete! Let's play your game $gameName")
-                    .setPositiveButton("OK") {_,_ ->
+                    .setPositiveButton("OK") { _, _ ->
                         val resultData = Intent()
                         resultData.putExtra(EXTRA_GAME_NAME, gameName)
                         setResult(Activity.RESULT_OK, resultData)
