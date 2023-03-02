@@ -17,7 +17,7 @@ This is a simple picture maching game to improve conentraion
 
 ## Android  UI Screen shoots 
 <img src="img/custom_game2.png" width="400">
-<img src="img/custom2_game1.png" width="400">
+<img src="img/custome_game1.png" width="400">
 <img src="img/easy1.png" width="400">
 <img src="img/easy1.png" width="400">
 <img src="img/gameWon3.png" width="400">
