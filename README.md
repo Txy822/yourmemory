@@ -20,7 +20,7 @@ This is a simple picture maching game to improve conentraion
 <img src="img/easy1.png" width="400">
 <img src="img/gameWon3.png" width="400">
 <img src="img/menu_item.png" width="400">
-<img src="imgsize_change.png" width="400">
+<img src="img/size_change.png" width="400">
 <img src="img/tough2.png" width="400">
 <img src="img/won_game2.png" width="400">
 <img src="img/custome_game1.png" width="400">
