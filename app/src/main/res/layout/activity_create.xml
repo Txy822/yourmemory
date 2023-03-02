@@ -41,7 +41,7 @@
         android:importantForAutofill="no"
         android:maxLines="1"
         android:digits="1234567890abcdefghijklmnopqrstuvwxyz_-"
-        android:hint="Game name(example: 'panda_fun')"
+        android:hint="Give game name"
         android:imeOptions="actionDone"
         android:inputType="textShortMessage"
         app:layout_constraintBottom_toTopOf="@+id/btnSave"
