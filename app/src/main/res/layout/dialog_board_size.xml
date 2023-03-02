@@ -33,7 +33,7 @@
             android:id="@+id/rbHard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hard (6 x 4)" />
+            android:text="Hard (7 x 4)" />
 
         <RadioButton
             android:id="@+id/rbTough"
