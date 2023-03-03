@@ -1,8 +1,8 @@
 # Your Memory Game  -Yo Memory game app
 
-This is a simple picture maching game to improve conentraion
+This is a simple picture matching game to improve concentration
 
-- You can play the game using defaulticons of different board size such as: 8x5, 7x4, 6x3 and 4x2
+- You can play the game using default icons of different board size such as: 8x5, 7x4, 6x3 and 4x2
 - You can customise the app by your own pictures as well
 - It has also a feature to download others game and play in your device
 
@@ -11,9 +11,9 @@ This is a simple picture maching game to improve conentraion
 - Kotlin to develop the game 
 - Firebase storage to store images 
 - Firebase  cloud firestore to store games with images
-- Confetti libarary for animation
+- Confetti library for animation
 - picasso for downloading pictures from firebase 
-- Bitmap scaller to scale the images
+- Bitmap scaler to scale the images
 
 ## Android  UI Screen shoots 
 <img src="img/custom_game2.png" width="400">
