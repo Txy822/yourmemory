@@ -12,7 +12,7 @@ This is a simple picture matching game to improve concentration
 - Firebase storage to store images 
 - Firebase  cloud firestore to store games with images
 - Confetti library for animation
-- picasso for downloading pictures from firebase 
+- Picasso for downloading pictures from firebase 
 - Bitmap scaler to scale the images
 
 ## Android  UI Screen shoots 
