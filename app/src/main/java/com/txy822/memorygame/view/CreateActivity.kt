@@ -1,4 +1,4 @@
-package com.txy822.memorygame
+package com.txy822.memorygame.view
 
 import android.app.Activity
 import android.content.Intent
@@ -22,7 +22,6 @@ import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.ktx.firestore

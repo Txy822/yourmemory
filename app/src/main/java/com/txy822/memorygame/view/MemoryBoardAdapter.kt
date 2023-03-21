@@ -1,4 +1,4 @@
-package com.txy822.memorygame
+package com.txy822.memorygame.view
 
 import android.content.Context
 import android.util.Log
@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import com.txy822.memorygame.R
 import com.txy822.memorygame.model.BoardSize
 import com.txy822.memorygame.model.MemoryCard
 import kotlin.math.min
@@ -64,13 +65,13 @@ class MemoryBoardAdapter(
                     imageButton.setImageResource(memoryCard.identifier)
                 }
             } else {
-                imageButton.setImageResource( R.drawable.default_image)
+                imageButton.setImageResource(R.drawable.default_image)
 
             }
             imageButton.alpha = if (memoryCard.isMatched) .4f else 1.0f
             val colorStateList = if (memoryCard.isMatched) ContextCompat.getColorStateList(
                 context,
-               R.color.color_gray
+                R.color.color_gray
             ) else null
             ViewCompat.setBackgroundTintList(imageButton, colorStateList)
             imageButton.setOnClickListener {

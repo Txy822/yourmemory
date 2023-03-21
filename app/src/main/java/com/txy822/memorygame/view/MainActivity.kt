@@ -1,4 +1,4 @@
-package com.txy822.memorygame
+package com.txy822.memorygame.view
 
 import android.animation.ArgbEvaluator
 import android.app.Activity
@@ -15,7 +15,6 @@ import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
@@ -26,6 +25,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import com.squareup.picasso.Picasso
+import com.txy822.memorygame.R
 //import com.txy822.memorygame.databinding.ActivityMainBinding
 import com.txy822.memorygame.model.BoardSize
 import com.txy822.memorygame.model.MemoryGame

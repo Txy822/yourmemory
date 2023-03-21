@@ -17,11 +17,11 @@
         android:theme="@style/Theme.Yourmemory"
         tools:targetApi="31">
         <activity
-            android:name="com.txy822.memorygame.CreateActivity"
+            android:name="com.txy822.memorygame.view.CreateActivity"
             android:screenOrientation="portrait"
             android:exported="true" />
         <activity
-            android:name="com.txy822.memorygame.MainActivity"
+            android:name="com.txy822.memorygame.view.MainActivity"
             android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
