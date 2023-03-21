@@ -1,4 +1,4 @@
-package com.txy822.memorygame.view
+package com.txy822.yourmemory.view
 
 import android.content.Context
 import android.util.Log
@@ -12,8 +12,8 @@ import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.txy822.memorygame.R
-import com.txy822.memorygame.model.BoardSize
-import com.txy822.memorygame.model.MemoryCard
+import com.txy822.yourmemory.model.BoardSize
+import com.txy822.yourmemory.model.MemoryCard
 import kotlin.math.min
 
 class MemoryBoardAdapter(

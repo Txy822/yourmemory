@@ -1,4 +1,4 @@
-package com.txy822.memorygame.model
+package com.txy822.yourmemory.model
 
 import com.google.firebase.firestore.PropertyName
 

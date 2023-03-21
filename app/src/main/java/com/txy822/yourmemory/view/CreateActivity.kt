@@ -1,4 +1,4 @@
-package com.txy822.memorygame.view
+package com.txy822.yourmemory.view
 
 import android.app.Activity
 import android.content.Intent
@@ -27,9 +27,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
-import com.txy822.memorygame.model.BoardSize
+import com.txy822.yourmemory.model.BoardSize
 import com.txy822.memorygame.R
-import com.txy822.memorygame.util.*
+import com.txy822.yourmemory.util.*
 
 import java.io.ByteArrayOutputStream
 

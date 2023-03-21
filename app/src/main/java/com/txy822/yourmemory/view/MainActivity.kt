@@ -1,4 +1,4 @@
-package com.txy822.memorygame.view
+package com.txy822.yourmemory.view
 
 import android.animation.ArgbEvaluator
 import android.app.Activity
@@ -27,11 +27,11 @@ import com.google.firebase.storage.ktx.storage
 import com.squareup.picasso.Picasso
 import com.txy822.memorygame.R
 //import com.txy822.memorygame.databinding.ActivityMainBinding
-import com.txy822.memorygame.model.BoardSize
-import com.txy822.memorygame.model.MemoryGame
-import com.txy822.memorygame.model.UserImageList
-import com.txy822.memorygame.util.EXTRA_BOARD_SIZE
-import com.txy822.memorygame.util.EXTRA_GAME_NAME
+import com.txy822.yourmemory.model.BoardSize
+import com.txy822.yourmemory.model.MemoryGame
+import com.txy822.yourmemory.model.UserImageList
+import com.txy822.yourmemory.util.EXTRA_BOARD_SIZE
+import com.txy822.yourmemory.util.EXTRA_GAME_NAME
 
 class MainActivity : AppCompatActivity() {
 

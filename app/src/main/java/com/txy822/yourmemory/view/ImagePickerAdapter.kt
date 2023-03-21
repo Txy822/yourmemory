@@ -1,4 +1,4 @@
-package com.txy822.memorygame.view
+package com.txy822.yourmemory.view
 
 import android.content.Context
 import android.net.Uri
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.txy822.memorygame.R
-import com.txy822.memorygame.model.BoardSize
+import com.txy822.yourmemory.model.BoardSize
 import kotlin.math.min
 
 
