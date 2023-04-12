@@ -19,7 +19,6 @@ class ImagePickerAdapter(
     private val imageClickListener: ImageClickListener
 ) : RecyclerView.Adapter<ImagePickerAdapter.ViewHolder>() {
 
-
     interface ImageClickListener {
         fun onPlaceholderClicker()
     }
@@ -58,6 +57,5 @@ class ImagePickerAdapter(
         } else {
             holder.bind()
         }
-
     }
 }

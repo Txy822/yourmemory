@@ -53,7 +53,6 @@ class MainActivity : AppCompatActivity() {
     private val db = Firebase.firestore
     private var gameName: String? = null
 
-
     private var boardSize: BoardSize = BoardSize.EASY
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
