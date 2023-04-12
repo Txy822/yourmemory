@@ -1,7 +1,6 @@
 package com.txy822.yourmemory.view
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,9 +42,7 @@ class MemoryBoardAdapter(
         layoutParams.height = cardSizeLength
         layoutParams.setMargins(MARGIN_SIZE, MARGIN_SIZE, MARGIN_SIZE, MARGIN_SIZE)
         return ViewHolder(view)
-
     }
-
 
     override fun getItemCount() = boardSize.numCards
 
@@ -76,7 +73,6 @@ class MemoryBoardAdapter(
             ViewCompat.setBackgroundTintList(imageButton, colorStateList)
             imageButton.setOnClickListener {
                 cardClickListener.onCardClicked(position)
-                Log.i(TAG, "Clicked on position $position")
             }
         }
     }
