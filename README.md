@@ -16,7 +16,7 @@ This is a simple picture matching game to improve concentration
 - Bitmap scaler to scale the images
 
 ## Android  UI Screen shoots 
-<img src="img/custom_game2.png" width="400">
+<!-- <img src="img/custom_game2.png" width="400">
 <img src="img/easy1.png" width="400">
 <img src="img/gameWon3.png" width="400">
 <img src="img/menu_item.png" width="400">
@@ -24,7 +24,20 @@ This is a simple picture matching game to improve concentration
 <img src="img/tough2.png" width="400">
 <img src="img/won_game2.png" width="400">
 <img src="img/custome_game1.png" width="400">
-<img src="img/fetch_memory_game.png" width="400">
+<img src="img/fetch_memory_game.png" width="400"> -->
+
+<div style="display: flex; justify-content: center;">
+  <img src="img/custom_game2.png" alt="Screenshot 1" style="width: 33%;" />
+  <img src="img/easy1.png" alt="Screenshot 2" style="width: 33%;" />
+  <img src="img/gameWon3.png" alt="Screenshot 3" style="width: 33%;" />
+  <img src="img/menu_item.png" alt="Screenshot 4" style="width: 33%;" />
+  <img src="img/size_change.png" alt="Screenshot 5" style="width: 33%;" />
+  <img src="img/tough2.png" alt="Screenshot 6" style="width: 33%;" />
+  <img src="img/won_game2.png" alt="Screenshot 6" style="width: 33%;" />
+  <img src="img/custome_game1.png" alt="Screenshot 6" style="width: 33%;" />
+  <img src="img/fetch_memory_game.png" alt="Screenshot 6" style="width: 33%;" />
+</div>
+
 
 
 
